@@ -1,0 +1,423 @@
+---
+---
+@charset "utf-8";
+
+/* ╔══════════════════════════════════════════════════════╗
+   ║   Exchange Server EOS — Custom Styles                ║
+   ║   Microsoft Fluent Design inspired                   ║
+   ╚══════════════════════════════════════════════════════╝ */
+
+/* ── CSS Variables ──────────────────────────────────── */
+:root {
+  --ms-blue:        #0078d4;
+  --ms-blue-dark:   #005a9e;
+  --ms-blue-darker: #003366;
+  --ms-blue-lt:     #cce4f6;
+  --ms-blue-xlt:    #eff6ff;
+  --ms-red:         #d13438;
+  --ms-orange:      #ca5010;
+  --ms-green:       #107c10;
+  --ms-yellow:      #ffb900;
+  --ms-gray:        #605e5c;
+  --ms-gray-lt:     #f3f2f1;
+  --radius:         8px;
+  --radius-lg:      12px;
+  --shadow-xs:      0 1px 2px rgba(0,0,0,.06);
+  --shadow-sm:      0 1px 4px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:      0 4px 14px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
+  --shadow-lg:      0 10px 30px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* ── Base Typography ────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HOME PAGE COMPONENTS
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Hero Banner ──────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #0078d4 0%, #004e8c 55%, #003366 100%);
+  color: #fff;
+  padding: 3.5rem 3rem 3rem;
+  border-radius: var(--radius-lg);
+  margin: 1rem 0 2.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -70px; right: -70px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -90px; left: -50px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.95);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .3rem .9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  color: #fff !important;
+  margin-top: 0 !important;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.hero-sub {
+  color: rgba(255,255,255,.85);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: .75rem 0 1.75rem;
+  max-width: 640px;
+}
+
+.hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .65rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.hero-btn-primary {
+  background: #fff;
+  color: var(--ms-blue) !important;
+  box-shadow: var(--shadow-sm);
+}
+.hero-btn-primary:hover {
+  background: #f0f8ff;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.hero-btn-outline {
+  background: rgba(255,255,255,.12);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.4);
+}
+.hero-btn-outline:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.7);
+}
+
+/* ── EOS Alert Banner ─────────────────────────────────── */
+.eos-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid;
+  margin: 1.5rem 0;
+}
+
+.eos-banner .eos-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: .05rem;
+}
+
+.eos-banner-title {
+  font-weight: 600;
+  font-size: .95rem;
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.eos-banner-body {
+  font-size: .875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.eos-banner-warning {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  border-left: 4px solid #d97706;
+}
+.eos-banner-warning .eos-banner-title { color: #92400e; }
+.eos-banner-warning .eos-banner-body  { color: #78350f; }
+
+.eos-banner-danger {
+  background: #fff5f5;
+  border-color: #fc8181;
+  border-left: 4px solid #e53e3e;
+}
+.eos-banner-danger .eos-banner-title { color: #9b2c2c; }
+.eos-banner-danger .eos-banner-body  { color: #742a2a; }
+
+/* ── Option Cards (Migration paths) ──────────────────── */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.option-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.5rem 1.4rem;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow .2s, border-color .2s, transform .2s;
+  position: relative;
+}
+
+.option-card:hover {
+  border-color: var(--ms-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.option-card .card-icon {
+  font-size: 2.1rem;
+  margin-bottom: .8rem;
+  display: block;
+}
+
+.option-card .card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ms-blue-dark);
+  margin: 0 0 .5rem;
+}
+
+.option-card .card-desc {
+  font-size: .83rem;
+  color: #6b7280;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.option-card .card-tag {
+  display: inline-block;
+  background: var(--ms-blue-xlt);
+  color: #1d4ed8;
+  font-size: .72rem;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: 999px;
+  margin-right: .35rem;
+}
+
+.option-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ms-blue);
+  text-decoration: none;
+  margin-top: .75rem;
+}
+.option-card .card-link:hover { text-decoration: underline; }
+
+/* ── Navigation Cards (Guide sections) ───────────────── */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ms-blue-xlt);
+  border: 1.5px solid #dbeafe;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.1rem;
+  text-decoration: none !important;
+  transition: all .2s;
+  color: inherit;
+}
+
+.nav-card:hover {
+  background: #dbeafe;
+  border-color: var(--ms-blue);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.nav-card .nav-icon  { font-size: 1.4rem; margin-bottom: .5rem; }
+.nav-card .nav-title { font-weight: 600; font-size: .92rem; color: #1b2a3b; margin-bottom: .25rem; }
+.nav-card .nav-desc  { font-size: .78rem; color: #6b7280; line-height: 1.45; }
+
+/* ── Status Badges ────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .2rem .65rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-eol     { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.badge-eos     { background: #fff3cd; color: #92400e; border: 1px solid #fcd34d; }
+.badge-active  { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL ENHANCEMENTS
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Page Title Accent ────────────────────────────────── */
+.main-content h1 {
+  border-bottom: 3px solid var(--ms-blue) !important;
+  padding-bottom: .45rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ── Section headings ─────────────────────────────────── */
+.main-content h2 {
+  color: var(--ms-blue-dark);
+}
+
+/* ── Table Styling ────────────────────────────────────── */
+.main-content table {
+  border-radius: var(--radius) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm) !important;
+  border: 1.5px solid #e5e7eb !important;
+  font-size: .875rem;
+}
+
+.main-content table thead th {
+  background: var(--ms-blue) !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  padding: .8rem 1rem !important;
+  border: none !important;
+}
+
+.main-content table tbody td {
+  padding: .65rem 1rem !important;
+  vertical-align: middle;
+  border-color: #f0f0f0 !important;
+}
+
+.main-content table tbody tr:nth-child(even) td { background: #f9fafb; }
+.main-content table tbody tr:hover td {
+  background: var(--ms-blue-xlt) !important;
+  transition: background .15s;
+}
+
+/* ── Callout / Note Boxes ─────────────────────────────── */
+.note, .warning, .important, .highlight, .new {
+  border-radius: var(--radius) !important;
+  border-left-width: 4px !important;
+  font-size: .9rem !important;
+}
+
+/* ── Code Blocks ──────────────────────────────────────── */
+.main-content pre.highlight,
+.main-content div.highlight {
+  border-radius: var(--radius) !important;
+  border: 1px solid #30363d !important;
+  margin: 1.25rem 0 !important;
+}
+
+.main-content code {
+  font-size: .84em;
+  border-radius: 4px;
+}
+
+/* ── Sidebar Active Link ──────────────────────────────── */
+.nav-list-item > .nav-list-link.active {
+  background: var(--ms-blue-xlt) !important;
+  color: var(--ms-blue) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--ms-blue);
+  padding-left: calc(1rem - 3px);
+}
+
+/* ── Search Box ───────────────────────────────────────── */
+.search input {
+  border-radius: var(--radius) !important;
+  border-color: #d1d5db !important;
+}
+
+.search input:focus {
+  border-color: var(--ms-blue) !important;
+  box-shadow: 0 0 0 3px rgba(0,120,212,.15) !important;
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn-primary {
+  background: var(--ms-blue) !important;
+  border-color: var(--ms-blue) !important;
+}
+.btn-primary:hover {
+  background: var(--ms-blue-dark) !important;
+  border-color: var(--ms-blue-dark) !important;
+}
+
+/* ── Site header logo text ────────────────────────────── */
+.site-title {
+  font-weight: 700 !important;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.site-footer {
+  border-top: 2px solid var(--ms-blue-lt) !important;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 800px) {
+  .hero {
+    padding: 2.25rem 1.5rem 2rem;
+  }
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+  .hero-sub {
+    font-size: 1rem;
+  }
+  .option-grid,
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+}

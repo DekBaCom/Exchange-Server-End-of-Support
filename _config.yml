@@ -9,7 +9,7 @@ remote_theme: just-the-docs/just-the-docs
 url: "https://DekBaCom.github.io"
 baseurl: "/Exchange-Server-End-of-Support"
 
-color_scheme: light
+color_scheme: exchange
 search_enabled: true
 
 search:

@@ -6,33 +6,44 @@ description: "Comprehensive guide for Exchange Server End of Support planning, m
 permalink: /
 ---
 
-# Exchange Server End of Support
-{: .fs-9 }
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<div class="hero">
+  <span class="hero-eyebrow">📧 Exchange Server EOS Guide</span>
+  <h1>Exchange Server<br>End of Support</h1>
+  <p class="hero-sub">
+    A complete resource for IT teams and decision-makers navigating
+    Exchange Server end of support — from assessment through migration
+    and decommission.
+  </p>
+  <div class="hero-actions">
+    <a href="{% link docs/checklist.md %}" class="hero-btn hero-btn-primary">✅ Start Checklist</a>
+    <a href="{% link docs/implement.md %}" class="hero-btn hero-btn-outline">🔧 Migration Options →</a>
+  </div>
+</div>
 
-A complete resource for IT teams and decision-makers navigating Exchange Server end of support — from assessment through migration.
-{: .fs-6 .fw-300 }
-
-[Start with the Checklist]({% link docs/checklist.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View Migration Options]({% link docs/implement.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
+<!-- ═══ EOS WARNING BANNER ════════════════════════════ -->
+<div class="eos-banner eos-banner-danger">
+  <span class="eos-icon">🚨</span>
+  <div>
+    <span class="eos-banner-title">Exchange Server 2016 &amp; 2019 reached End of Support — October 14, 2025</span>
+    <p class="eos-banner-body">
+      No security patches, no bug fixes, no Microsoft technical support.
+      Every new vulnerability discovered from this point is a permanent, unpatched risk.
+    </p>
+  </div>
+</div>
 
 ---
 
-{: .warning }
-> **Exchange Server 2016 and 2019 reached End of Support on October 14, 2025.**  
-> These versions no longer receive security updates, bug fixes, or Microsoft technical support. Continued operation creates significant security, compliance, and operational risk.
+## What Stops After End of Support
 
-## What Happens After End of Support?
-
-After the end-of-support date, Microsoft no longer provides:
-
-| What Stops | Impact |
+| What Microsoft Stops Providing | Business Impact |
 |:---|:---|
-| Security patches | Known CVEs remain unpatched permanently |
-| Bug fixes | Product defects accumulate without resolution |
-| Microsoft Support | No escalation path for critical incidents |
-| Compliance documentation | Audit evidence becomes harder to produce |
-
-Your mail infrastructure will continue to function, but the risk profile changes dramatically the moment support ends.
+| 🔴 Security patches | New CVEs become permanent vulnerabilities |
+| 🔴 Bug fixes | Product defects accumulate without resolution |
+| 🔴 Microsoft Support | No escalation for P1 incidents |
+| 🔴 Compliance documentation | Audit evidence harder to produce |
+| 🔴 Online content updates | Documentation no longer current |
 
 ---
 
@@ -40,45 +51,110 @@ Your mail infrastructure will continue to function, but the risk profile changes
 
 | Version | End of Extended Support | Status |
 |:---|:---:|:---:|
-| Exchange Server 2010 | October 13, 2020 | End of Life |
-| Exchange Server 2013 | April 11, 2023 | End of Life |
-| Exchange Server 2016 | **October 14, 2025** | End of Support |
-| Exchange Server 2019 | **October 14, 2025** | End of Support |
-| Exchange Server SE | 2030+ | Active |
+| Exchange Server 2010 | October 13, 2020 | <span class="badge badge-eol">End of Life</span> |
+| Exchange Server 2013 | April 11, 2023 | <span class="badge badge-eol">End of Life</span> |
+| Exchange Server 2016 | **October 14, 2025** | <span class="badge badge-eos">⚠ End of Support</span> |
+| Exchange Server 2019 | **October 14, 2025** | <span class="badge badge-eos">⚠ End of Support</span> |
+| Exchange Server SE | 2030+ | <span class="badge badge-active">✓ Current</span> |
 
 {: .note }
-Exchange Server Subscription Edition (SE) is Microsoft's current on-premises offering, providing a supported path for organizations that cannot move to the cloud.
+Exchange Server Subscription Edition (SE) is Microsoft's current on-premises offering — a supported migration target for organizations that must keep email infrastructure on-premises.
 
 ---
 
 ## Your Three Migration Paths
 
-### 1. Microsoft 365 — Exchange Online
-Move mailboxes to Microsoft's fully managed cloud service. No more server maintenance, automatic updates, and integrated security.
-**Best for:** Organizations embracing cloud-first strategy.
+<div class="option-grid">
 
-### 2. Exchange Server SE — On-Premises
-Upgrade to the new subscription-based Exchange Server. Stays on your infrastructure with full control over data.
-**Best for:** Organizations with regulatory, data-sovereignty, or connectivity requirements.
+  <div class="option-card">
+    <span class="card-icon">☁️</span>
+    <div class="card-title">Microsoft 365</div>
+    <p class="card-desc">Fully managed cloud email. No server maintenance, automatic updates, built-in Defender security, and integrated compliance tools.</p>
+    <span class="card-tag">Cloud</span>
+    <span class="card-tag">Recommended</span>
+    <br>
+    <a href="{% link docs/implement.md %}#option-1-microsoft-365-exchange-online" class="card-link">Learn more →</a>
+  </div>
 
-### 3. Hybrid Deployment
-Run Exchange on-premises alongside Exchange Online, migrating users in waves. Offers the most flexibility and lowest risk per-batch.
-**Best for:** Large organizations needing a phased, low-disruption transition.
+  <div class="option-card">
+    <span class="card-icon">🏢</span>
+    <div class="card-title">Exchange Server SE</div>
+    <p class="card-desc">Microsoft's new subscription-based on-premises Exchange. Full data control with a supported upgrade path from Exchange 2016/2019.</p>
+    <span class="card-tag">On-Premises</span>
+    <br>
+    <a href="{% link docs/implement.md %}#option-2-exchange-server-subscription-edition" class="card-link">Learn more →</a>
+  </div>
+
+  <div class="option-card">
+    <span class="card-icon">🔀</span>
+    <div class="card-title">Hybrid Deployment</div>
+    <p class="card-desc">Combine Exchange Online and on-premises Exchange. Migrate users in waves while maintaining seamless calendar and mail coexistence.</p>
+    <span class="card-tag">Phased</span>
+    <span class="card-tag">Low Risk</span>
+    <br>
+    <a href="{% link docs/implement.md %}#option-3-hybrid-deployment" class="card-link">Learn more →</a>
+  </div>
+
+</div>
 
 ---
 
-## Guide Sections
+## Navigate This Guide
 
-| Section | What You'll Find |
-|:---|:---|
-| [Checklist]({% link docs/checklist.md %}) | Phased migration readiness tasks from assessment to go-live |
-| [Implementation]({% link docs/implement.md %}) | Step-by-step migration options and technical guidance |
-| [Concerns]({% link docs/concern.md %}) | Security, compliance, continuity, and user-experience issues |
-| [TCO Analysis]({% link docs/tco.md %}) | On-premises vs. cloud 5-year cost comparison |
-| [Risk Assessment]({% link docs/risk.md %}) | Risk matrix, categories, and mitigation strategies |
-| [Licensing]({% link docs/license.md %}) | Exchange SE, Microsoft 365, and CAL options explained |
+<div class="nav-grid">
+
+  <a href="{% link docs/checklist.md %}" class="nav-card">
+    <span class="nav-icon">✅</span>
+    <span class="nav-title">Checklist</span>
+    <span class="nav-desc">5-phase migration readiness tasks from assessment to decommission</span>
+  </a>
+
+  <a href="{% link docs/implement.md %}" class="nav-card">
+    <span class="nav-icon">🔧</span>
+    <span class="nav-title">Implementation</span>
+    <span class="nav-desc">Step-by-step guide for all three migration paths</span>
+  </a>
+
+  <a href="{% link docs/concern.md %}" class="nav-card">
+    <span class="nav-icon">⚠️</span>
+    <span class="nav-title">Concerns</span>
+    <span class="nav-desc">Security, compliance, continuity, and user-experience issues</span>
+  </a>
+
+  <a href="{% link docs/tco.md %}" class="nav-card">
+    <span class="nav-icon">💰</span>
+    <span class="nav-title">TCO Analysis</span>
+    <span class="nav-desc">5-year total cost of ownership across all options</span>
+  </a>
+
+  <a href="{% link docs/risk.md %}" class="nav-card">
+    <span class="nav-icon">🛡️</span>
+    <span class="nav-title">Risk Assessment</span>
+    <span class="nav-desc">Risk register, matrix, and mitigation strategies</span>
+  </a>
+
+  <a href="{% link docs/license.md %}" class="nav-card">
+    <span class="nav-icon">📋</span>
+    <span class="nav-title">Licensing</span>
+    <span class="nav-desc">Exchange SE, Microsoft 365 plans, CAL guide, and FAQs</span>
+  </a>
+
+</div>
 
 ---
+
+<!-- ═══ URGENCY BANNER ════════════════════════════════ -->
+<div class="eos-banner eos-banner-warning">
+  <span class="eos-icon">⏱️</span>
+  <div>
+    <span class="eos-banner-title">Don't wait — every month of delay increases exposure</span>
+    <p class="eos-banner-body">
+      Enterprise migrations typically take <strong>3–12 months</strong> depending on size and complexity.
+      Organizations still planning should target completion by <strong>Q4 2026</strong> at the latest.
+      <a href="{% link docs/checklist.md %}">Start your assessment today →</a>
+    </p>
+  </div>
+</div>
 
 {: .important }
-All pricing figures in this guide are approximate and subject to change. Verify current pricing and licensing terms directly with Microsoft or your licensing partner before making procurement decisions.
+All pricing and licensing figures in this guide are approximate estimates. Verify current terms directly with Microsoft or a licensed Microsoft partner before making procurement decisions.
